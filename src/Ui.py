@@ -27,15 +27,15 @@ class UI:
             for col in range(7):
                 piece = board.grid[row][col]
                 if piece == 'x':
-                    text = "X"
-                    bg_color = "light blue"
+                    text = " "
+                    bg_color = "blue"
                 elif piece == 'o':
-                    text = "O"
-                    bg_color = "light gray"
+                    text = " "
+                    bg_color = "red"
                 else:
                     text = " "
                     bg_color = "white"
-                self.buttons[row][col].configure(text=text, bg=bg_color)
+                self.buttons[row][col].configure(text=text, highlightbackground=bg_color)
 
     def display_game(self, board):
         self.update_board(board)
