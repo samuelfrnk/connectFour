@@ -6,7 +6,6 @@ class UI:
         self.column_clicked = None
         self.root = tk.Tk()
         self.root.title("Connect Four")
-
         self.board_frame = tk.Frame(self.root)
         self.board_frame.pack()
 

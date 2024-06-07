@@ -4,20 +4,22 @@ class GameFlow:
         self.ai_logic = ai_logic
         self.board = board
         self.is_human_players_turn = True
+        self.depth_level = 4
 
     def start(self):
         while not self.board.is_game_over():
             self.ui.display_game(self.board)
             if self.is_human_players_turn:
                 move = self.ui.get_player_move()
+                # print("HUMAN ", move)
                 if move is not None:
                     self.board.register_player_move(move)
                     self.is_human_players_turn = False
             else:
-                move = self.ai_logic.choose_move(self.board)
+                move = self.ai_logic.choose_move(self.board, self.depth_level)
+                # print("AI ",move)
                 self.board.register_ai_move(move)
                 self.is_human_players_turn = True
-
             if self.board.is_game_over():
                 self.ui.display_game(self.board)
                 if self.board.player_won('x'):
@@ -29,3 +31,6 @@ class GameFlow:
                 break
 
         self.ui.root.mainloop()
+
+    def adjust_depth_level(self, level):
+        self.depth_level = level
