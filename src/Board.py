@@ -70,4 +70,15 @@ class Board:
         """Return a copy of the grid."""
         return [row.copy() for row in self.grid]
 
+    def get_valid_moves(self):
+        valid_moves = []
+        for i in range(self.columns):
+            if self.is_valid_move(i):
+                valid_moves.append(i)
+        return valid_moves
 
+    def copy(self):
+        """Return a copy of the current board state."""
+        new_board = Board()
+        new_board.grid = self.get_grid()
+        return new_board

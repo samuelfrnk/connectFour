@@ -7,7 +7,7 @@ class GameFlow:
         self.ai_logic = ai_logic
         self.board = board
         self.is_human_players_turn = True
-        self.depth_level = 4
+        self.depth_level = 6
 
     def start(self):
         while not self.board.is_game_over():
@@ -23,8 +23,8 @@ class GameFlow:
                 # print("AI ",move)
                 self.board.register_ai_move(move)
                 self.is_human_players_turn = True
-            print(Evaluation.evaluation_function(self.board))
-            self.board.print_board()
+            # print(Evaluation.evaluation_function(self.board))
+            # self.board.print_board()
             if self.board.is_game_over():
                 self.ui.display_game(self.board)
                 if self.board.player_won('x'):
