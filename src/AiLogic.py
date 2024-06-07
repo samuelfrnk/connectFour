@@ -9,8 +9,6 @@ class AiLogic:
 
     def choose_move(self, board, depth):
         move, value = self.minimax_alpha_beta(board, depth, -math.inf, math.inf, True)
-        print("value", value)
-        print("move", move)
         return move
 
     def minimax_alpha_beta(self, board, depth, alpha, beta, isMaximizing):
