@@ -32,9 +32,8 @@ The AI logic is implemented in the 'AiLogic.py' class, which contains the minima
 
 ## Considerations 
 
-The current AI implementation is quite strong, and I have personally found it challenging to win or even draw against it. However, there are areas for improvement, particularly in the evaluation function. Currently, it heavily weights winning game-over positions, but its performance can be less effective in non-immediate winning scenarios (i.e., positions where no winning move is within the next 6 moves).
-
-For those interested in benchmarking or improving the AI, you can compare it against another AI 4 Connect bot, which has managed to outperform this implementation
+The current AI implementation is quite strong, and I have personally found it challenging to win or even draw against it. 
+In terms of evaluation function [this tutorial](https://medium.com/analytics-vidhya/artificial-intelligence-at-play-connect-four-minimax-algorithm-explained-3b5fc32e4a4f) helped quite a lot
 
 ## Contribution
 Feel free to fork this repository and submit pull requests. Improvements to the evaluation function or any other part of the AI are particularly welcome.

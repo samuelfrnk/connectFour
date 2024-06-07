@@ -15,7 +15,7 @@ class AiLogic:
         valid_moves = board.get_valid_moves()
 
         if depth == 0 or board.is_game_over():
-            return None, Evaluation.evaluation_function(board)
+            return None, Evaluation.evaluation_function(board, isMaximizing)
 
         if isMaximizing:
             value = -math.inf

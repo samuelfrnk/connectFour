@@ -14,14 +14,15 @@ class GameFlow:
             self.ui.display_game(self.board)
             if self.is_human_players_turn:
                 move = self.ui.get_player_move()
-                # print("HUMAN ", move)
                 if move is not None:
                     self.board.register_player_move(move)
                     self.is_human_players_turn = False
+                print("Evaluation: ", Evaluation.evaluation_function(self.board, False))
             else:
                 move = self.ai_logic.choose_move(self.board, self.depth_level)
                 # print("AI ",move)
                 self.board.register_ai_move(move)
+                print("Evaluation: ", Evaluation.evaluation_function(self.board, True))
                 self.is_human_players_turn = True
             # print(Evaluation.evaluation_function(self.board))
             # self.board.print_board()
