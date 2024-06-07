@@ -1,3 +1,4 @@
+# AI players move are registered as o in the 2d board array, x for the human player
 class Board:
     def __init__(self):
         self.columns = 7
@@ -64,3 +65,9 @@ class Board:
     def is_full(self):
         """Check if the board is full (i.e., no empty spaces left)."""
         return all(cell != ' ' for row in self.grid for cell in row)
+
+    def get_grid(self):
+        """Return a copy of the grid."""
+        return [row.copy() for row in self.grid]
+
+

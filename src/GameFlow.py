@@ -1,3 +1,6 @@
+from Evaluation import Evaluation
+
+
 class GameFlow:
     def __init__(self, ui, ai_logic, board):
         self.ui = ui
@@ -20,10 +23,12 @@ class GameFlow:
                 # print("AI ",move)
                 self.board.register_ai_move(move)
                 self.is_human_players_turn = True
+            print(Evaluation.evaluation_function(self.board))
+            self.board.print_board()
             if self.board.is_game_over():
                 self.ui.display_game(self.board)
                 if self.board.player_won('x'):
-                    self.ui.announce_winner('Player')
+                    self.ui.announce_winner('Human')
                 elif self.board.player_won('o'):
                     self.ui.announce_winner('AI')
                 else:
